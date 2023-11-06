@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOLVE</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +15,6 @@
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/query.css" />
-    <!-- <script defer src="https://code.jquery.com/jquery.min.js"></script> -->
     <script
       defer
       src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -41,20 +37,13 @@
   </head>
   <body onload="startsim();varinit();
 ">
-    <!-- Logo -->
-    <!-- Experiment Title -->
-    <!-- Tools Sections -->
-    <!-- Tools Container -->
-    <!-- Simulation Container -->
-    <div class="title-div">
-      <!-- <span class="round left-top"></span>
-      <span class="round left-bottom"></span>
-      <span class="round right-top"></span>
-      <span class="round right-bottom"></span> -->
-      <div class="logo-div">
-        <a href="#"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
+    <div class="title-div-container">
+      <div class="title-div">
+        <div class="logo-div">
+          <a href="#"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
+        </div>
+        <h1>Experiment Title</h1>
       </div>
-      <h1>Single Degree of Freedom System</h1>
     </div>
     <div class="container">
       <div class="sidebar">
@@ -121,35 +110,17 @@
       <div class="main">
         <div class="main-section">
           <div id="simulation" class="main__task-div">
-            <div id="controls" class="div__control">
-              <img id="playpausebutton" onclick="simstate()" src="./images/blueplaydull.svg" alt="" />
-              <img id="graphbutton" onclick="plotgraph()" src="./images/graphbutton.svg" alt="" />
-            </div>
-            <h3 class="task-title">Simulation</h3>
-            <div class="canvas__div">
-              <div class="img-div">
-                <div class="circuit-dia">
-                  <img src="images/massSystem.PNG" alt="mass system" />
-                  <span class="tooltip cir-tooltip"></span>
-                </div>
-                <div class="cross-img">
-                  <img src="images/crossC.PNG" alt="cross section" />
-                  <span class="tooltip sec-tooltip">
-                    ISMB: 100, h: 100mm, b: 75mm, t1: 4mm, t2: 7mm, Ixx: 257.5 cm<sup>4</sup>, Iyy: 40.8 cm<sup>4</sup>,
-    Area: 14.6 cm<sup>2</sup>,
-                  </span>
-                </div>
-                <div class="other-sec display-hide">
-                  <div>
-                    <label for="CsArea">C/s Area(m^2)</label>
-                    <input class="var-spinner" id="CsArea" name="value" />
-                  </div>
-                  <div>
-                    <label for="Ivalue">Ixx(m^4) </label>
-                    <input class="var-spinner" id="Ivalue" name="value" />
-                  </div>
-                </div>
+            <div class="title-control-div">
+              <h3 class="task-title">Simulation</h3>
+              <div id="controls" class="div__control">
+                <img id="playpausebutton" onclick="simstate()" src="./images/blueplaydull.svg" alt="" />
+                <img id="graphbutton" onclick="plotgraph()" src="./images/graphbutton.svg" alt="" />
               </div>
+            </div>
+            
+            <div class="canvas__div">
+            
+               
               <div id="canvas-container">
                 <canvas id="canvas" class="canvas"></canvas>
               </div>
@@ -164,65 +135,86 @@
           <div id="variables" class="main__task-div">
             <div class="settings-sections">
               <h3 class="task-title">Variables</h3>
-              <div class="var-div">
-                <label for="materials">Materials</label>
-                <select
-                  class="var-select select-menu"
-                  name="materials"
-                  id="materials"
-                >
-                  <option class="select-menu" value="0">Steel</option>
-                  <option class="select-menu" value="1">Aluminium</option>
-                  <option class="select-menu" value="2">Bronze</option>
-                </select>
-              </div>
-              <div class="var-div">
-                <label for="sections">Sections</label>
-                <select
-                  class="var-select select-menu"
-                  name="sections"
-                  id="sections"
-                >
-                  <option class="select-menu" value="0">I section</option>
-                  <option class="select-menu" value="1">T section</option>
-                  <option class="select-menu" value="2">C section</option>
-                  <option class="select-menu" value="3">L section</option>
-                  <option class="select-menu" value="4">Square section</option>
-                  <option class="select-menu" value="5">
-                    Circular section
-                  </option>
-                  <option class="select-menu" value="6">Other section</option>
-                </select>
-              </div>
-              <div class="var-div">
-                <label for="lengthSpinner">Length (mm)</label>
-                <input class="var-spinner" id="lengthSpinner" name="value" />
-                <div class="var-slider" id="lengthSlider"></div>
-              </div>
-              <div class="var-div">
-                <label for="dampSpinner">Damping Ratio</label>
-                <input class="var-spinner" id="dampSpinner" name="value" />
-                <div class="var-slider" id="dampSlider"></div>
-              </div>
-              <div class="var-div">
-                <label for="massSpinner">End Mass(kg)</label>
-                <input class="var-spinner" id="massSpinner" name="value" />
-                <div class="var-slider" id="massSlider"></div>
+                <div class="variables-sections">
+
+                <div class="var-div">
+                  <label for="materials">Materials</label>
+                  <select
+                    class="var-select select-menu"
+                    name="materials"
+                    id="materials"
+                  >
+                    <option class="select-menu" value="0">Steel</option>
+                    <option class="select-menu" value="1">Aluminium</option>
+                    <option class="select-menu" value="2">Bronze</option>
+                  </select>
+                </div>
+                <div class="var-div">
+                  <label for="sections">Sections</label>
+                  <select
+                    class="var-select select-menu"
+                    name="sections"
+                    id="sections"
+                  >
+                    <option class="select-menu" value="0">I section</option>
+                    <option class="select-menu" value="1">T section</option>
+                    <option class="select-menu" value="2">C section</option>
+                    <option class="select-menu" value="3">L section</option>
+                    <option class="select-menu" value="4">Square section</option>
+                    <option class="select-menu" value="5">
+                      Circular section
+                    </option>
+                    <option class="select-menu" value="6">Other section</option>
+                  </select>
+                </div>
+                <div class="var-div">
+                  <label for="lengthSpinner">Length (mm)</label>
+                  <input class="var-spinner" id="lengthSpinner" name="value" />
+                  <div class="var-slider" id="lengthSlider"></div>
+                </div>
+                <div class="var-div">
+                  <label for="dampSpinner">Damping Ratio</label>
+                  <input class="var-spinner" id="dampSpinner" name="value" />
+                  <div class="var-slider" id="dampSlider"></div>
+                </div>
+                <div class="var-div">
+                  <label for="massSpinner">End Mass(kg)</label>
+                  <input class="var-spinner" id="massSpinner" name="value" />
+                  <div class="var-slider" id="massSlider"></div>
+                </div>
               </div>
             </div>
+          </div>
+		  
+		  <div id="comments" class="main__task-div">
+            <h3 class="task-title">Controls</h3>
+              <div class="settings-sections">
+                <div class="control-sections">
+
+                 <button style="width:30%;">Add to table</button>
+			
+            <img id="playpausebutton" style="width:40px;" onclick="simstate()" src="./images/blueplaydull.svg" alt="" />
+                <img id="graphbutton" style="width:40px;" onclick="plotgraph()" src="./images/graphbutton.svg" alt="" />
+              
+         
+                </div>
+              </div>
           </div>
 
           <div id="comments" class="main__task-div">
             <h3 class="task-title">Results</h3>
-            <div class="settings-sections">
-              <p id="p1">m = <span id="mass"></span></p>
-            <p id="p2">k = <span id="k"></span></p>
-            <p id="p3">c = <sapn id="c"></span></p>
-            <div id="omegavalues">
-		<p>&#969;<sub>n</sub> = <span id="wn"></span></p>
-                <p>&#969;<sub>d</sub> = <span id="wd"></span></p> 
-            </div>
-          </div>
+              <div class="settings-sections">
+                <div class="control-sections">
+
+                  <p id="p1">m = <span id="mass"></span></p>
+                  <p id="p2">k = <span id="k"></span></p>
+                  <p id="p3">c = <sapn id="c"></span></p>
+                    <div id="omegavalues">
+                      <p>&#969;<sub>n</sub> = <span id="wn"></span></p>
+                      <p>&#969;<sub>d</sub> = <span id="wd"></span></p> 
+                    </div>
+                </div>
+              </div>
           </div>
           <div class="main__task-div footer">
             <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>

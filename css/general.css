@@ -1,4 +1,5 @@
 :root {
+
   --clr-title-background: #2e1065;
   --clr-text-clr: #e2e8f0;
   --clr-container-clr: #a5b4fc;
@@ -12,9 +13,7 @@
 }
 
 html {
-  /* 10px */
   font-size: 62.5%;
-  /* font-family: "comic sans MS", sans-serif; */
   font-family: "Nunito", sans-serif;
 }
 
@@ -31,11 +30,6 @@ h2,
 h3 {
   color: #333;
 }
-/* label,
-select,
-input {
-  display: inline-block;
-} */
 
 ::-webkit-scrollbar {
   width: 0.5rem;
@@ -52,7 +46,7 @@ input {
 .ui-widget textarea,
 .ui-widget button,
 .ui-select option {
-  font-family: "comic sans MS", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 1.6rem;
 }
 
@@ -203,7 +197,7 @@ input {
 }
 
 .select-menu {
-  font-family: "Comic sans MS", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 1.6rem;
 }
 .highlight {
