@@ -367,6 +367,8 @@ function varupdate() {
   $("#resistor3Spinner").spinner("value", $("#resistor3Slider").slider("value"));
   volt = $("#voltageSpinner").spinner("value"); //Updating variables
   res1 = $("#resistorSpinner").spinner("value");
+  res1 = $("#resistorSpinner").spinner("value");
+  res1 = $("#resistorSpinner").spinner("value");
  };
 
 window.addEventListener("load", varinit);
