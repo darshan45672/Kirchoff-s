@@ -39,12 +39,17 @@ ctx.lineTo(400, 171);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(100, 62);
-ctx.lineTo(100, 171);
+ctx.moveTo(400, 172);
+ctx.lineTo(400, 271);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(400, 245);
+ctx.moveTo(100, 62);
+ctx.lineTo(100, 235);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(400, 345);
 ctx.lineTo(400, 430);
 ctx.stroke();
 
@@ -54,8 +59,14 @@ ctx.lineTo(700, 271);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(700, 200);
+ctx.moveTo(700, 345);
 ctx.lineTo(700, 430);
+ctx.stroke();
+
+
+ctx.beginPath();
+ctx.moveTo(100, 265);
+ctx.lineTo(100, 430);
 ctx.stroke();
 
 // Horizontal lines
@@ -66,19 +77,59 @@ ctx.stroke();
 
 ctx.beginPath();
 ctx.moveTo(100, 62);
+ctx.lineTo(160, 62);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(299, 62);
 ctx.lineTo(400, 62);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(400, 62);
-ctx.lineTo(510, 62);
+ctx.moveTo(200, 62);
+ctx.lineTo(230, 62);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(590, 62);
+ctx.moveTo(400, 62);
+ctx.lineTo(530, 62);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(570, 62);
 ctx.lineTo(701, 62);
 ctx.stroke();
-      
+
+//power supply
+ctx.beginPath();
+ctx.moveTo(75, 235);
+ctx.lineTo(125, 235);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(85, 245);
+ctx.lineTo(115, 245);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(75, 255);
+ctx.lineTo(125, 255);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(85, 265);
+ctx.lineTo(115, 265);
+ctx.stroke();
+
+// power supply  naming
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("+ve", 55, 210)
+
+// negeative terminal naming
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("-ve", 60, 290)
 // ctx.beginPath();
 // ctx.moveTo(690, 340);
 // ctx.lineTo(700, 346);
@@ -114,89 +165,151 @@ ctx.stroke();
 // ctx.lineTo(698, 271);
 // ctx.stroke();
 
+// resistor 1
+
+ctx.beginPath();
+ctx.moveTo(230, 62);
+ctx.lineTo(240,48);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(240, 48);
+ctx.lineTo(250,72);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(250, 72);
+ctx.lineTo(260,48);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(260, 48);
+ctx.lineTo(270,72);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(270, 72);
+ctx.lineTo(280,48);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(280, 48);
+ctx.lineTo(290,72);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(290, 72);
+ctx.lineTo(300,61);
+ctx.stroke();
+
+// resistor 1 end
+
 // resistor 2
 
 ctx.beginPath();
-ctx.moveTo(510, 62);
-ctx.lineTo(520,48);
+ctx.moveTo(690, 340);
+ctx.lineTo(700, 346);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(530, 62);
-ctx.lineTo(540,48);
+ctx.moveTo(690, 340);
+ctx.lineTo(710, 328);
+ctx.stroke();
+      
+ctx.beginPath();
+ctx.moveTo(710, 328);
+ctx.lineTo(690, 316);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(550, 62);
-ctx.lineTo(560,48);
+ctx.moveTo(690, 316);
+ctx.lineTo(710, 302);
+ctx.stroke();
+      
+ctx.beginPath();
+ctx.moveTo(710, 302);
+ctx.lineTo(690, 290);
+ctx.stroke();
+      
+ctx.beginPath();
+ctx.moveTo(690, 290);
+ctx.lineTo(710, 278);
+ctx.stroke();
+      
+ctx.beginPath();
+ctx.moveTo(710, 278);
+ctx.lineTo(698, 271);
 ctx.stroke();
 
-ctx.beginPath();
-ctx.moveTo(570, 62);
-ctx.lineTo(580,48);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(530, 62);
-ctx.lineTo(520,48);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(550, 62);
-ctx.lineTo(540,48);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(570, 62);
-ctx.lineTo(560,48);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(580, 48);
-ctx.lineTo(590,62);
-ctx.stroke();
 // resistor 2 end
 
 //resistor 3
 ctx.beginPath();
-ctx.moveTo(390, 240);
-ctx.lineTo(400, 246);
+ctx.moveTo(390, 340);
+ctx.lineTo(400, 346);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(390, 240);
-ctx.lineTo(410, 228);
+ctx.moveTo(390, 340);
+ctx.lineTo(410, 328);
 ctx.stroke();
       
 ctx.beginPath();
-ctx.moveTo(410, 228);
-ctx.lineTo(390, 216);
+ctx.moveTo(410, 328);
+ctx.lineTo(390, 316);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(390, 216);
-ctx.lineTo(410, 202);
+ctx.moveTo(390, 316);
+ctx.lineTo(410, 302);
 ctx.stroke();
       
 ctx.beginPath();
-ctx.moveTo(410, 202);
-ctx.lineTo(390, 190);
+ctx.moveTo(410, 302);
+ctx.lineTo(390, 290);
 ctx.stroke();
       
 ctx.beginPath();
-ctx.moveTo(390, 190);
-ctx.lineTo(410, 178);
+ctx.moveTo(390, 290);
+ctx.lineTo(410, 278);
 ctx.stroke();
       
 ctx.beginPath();
-ctx.moveTo(410, 178);
-ctx.lineTo(398, 171);
+ctx.moveTo(410, 278);
+ctx.lineTo(398, 271);
 ctx.stroke();
 //resistor3 end
+
+// resister 1 ammeter
+ctx.fillStyle = "white";
+ctx.beginPath();
+ctx.arc(180, 63, 20, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+// resistor 1 Ammetre symbol naming
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("A1", 167, 63)
+
+// resister 2 ammeter
+ctx.fillStyle = "white";
+ctx.beginPath();
+ctx.arc(550, 65, 20, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+// Ammetre symbol naming
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("A2", 538, 65)
+
 // resister 3 ammeter
 ctx.fillStyle = "white";
 ctx.beginPath();
-ctx.arc(400, 300, 20, 0, 2 * Math.PI);
+ctx.arc(400, 185, 20, 0, 2 * Math.PI);
 ctx.fill();
 ctx.stroke();
 
@@ -204,7 +317,38 @@ ctx.stroke();
 ctx.fillStyle = "black"
 ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
-ctx.fillText("A3", 387, 301)
+ctx.fillText("A3", 387, 186)
+
+// resistor 1 naming
+ctx.font = "bold small-caps 15px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("R1", 235, 30)
+
+
+
+// resistor 2 naming
+ctx.font = "bold small-caps 15px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("R2", 730, 280)
+
+// resistor 3 naming
+ctx.font = "bold small-caps 15px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("R3", 425, 280)
+
+//ammeter naming
+
+ctx.font = "bold small-caps 15px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("ammeter 1", 130, 30)
+
+ctx.font = "bold small-caps 15px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("ammeter 2", 500, 30)
+
+ctx.font = "bold small-caps 15px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("ammeter 3", 425, 180)
 
 
 // ctx.beginPath();io
@@ -222,18 +366,6 @@ ctx.fillText("A3", 387, 301)
 // ctx.lineTo(630, 215);
 // ctx.stroke();
 
-// ammetre circle
-ctx.fillStyle = "white";
-ctx.beginPath();
-ctx.arc(700, 280, 20, 0, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-
-// Ammetre symbol naming
-ctx.fillStyle = "black"
-ctx.font = "bold small-caps 20px Arial";
-ctx.textBaseline = "middle";
-ctx.fillText("A2", 687, 280)
 
 //ground
 ctx.beginPath();  
@@ -367,8 +499,7 @@ function varupdate() {
   $("#resistor3Spinner").spinner("value", $("#resistor3Slider").slider("value"));
   volt = $("#voltageSpinner").spinner("value"); //Updating variables
   res1 = $("#resistorSpinner").spinner("value");
-  res1 = $("#resistorSpinner").spinner("value");
-  res1 = $("#resistorSpinner").spinner("value");
+  resistanceDisplay(res1);
  };
 
 window.addEventListener("load", varinit);
