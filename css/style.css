@@ -352,3 +352,14 @@
 .control-sections {
   height: 100%;
 }
+
+tr, th,td, table{
+  border:2px solid black;
+  border-collapse: collapse;
+}
+td{
+  text-align: center;
+}
+.column-font{
+  display: none;
+}
