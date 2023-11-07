@@ -500,7 +500,6 @@ function varupdate() {
   volt = $("#voltageSpinner").spinner("value"); //Updating variables
   res1 = $("#resistorSpinner").spinner("value");
   resistanceDisplay(res1);
-
  };
 
 window.addEventListener("load", varinit);
