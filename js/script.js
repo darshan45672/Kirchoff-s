@@ -38,15 +38,24 @@ ctx.fillStyle = "black";
 roundRect(395, 58, 10, 10, 6);
 ctx.fill();
 
-ctx.strokeStyle = "black";
 ctx.lineWidth = 2;
 
 // Vertical lines
+ctx.strokeStyle = 'yellow';
 ctx.beginPath();
-ctx.moveTo(400, 62);
+ctx.moveTo(400, 68);
 ctx.lineTo(400, 171);
 ctx.stroke();
 
+// ctx.beginPath();
+// ctx.moveTo(400, 68); // Start at the endpoint of the line
+// ctx.lineTo(395, 73); // Arrowhead bottom
+// ctx.lineTo(405, 73); // Arrowhead top
+// ctx.lineTo(400, 68); // Back to the endpoint
+// ctx.stroke();
+
+
+ctx.strokeStyle = 'black';
 ctx.beginPath();
 ctx.moveTo(400, 172);
 ctx.lineTo(400, 271);
@@ -72,13 +81,13 @@ ctx.moveTo(700, 345);
 ctx.lineTo(700, 430);
 ctx.stroke();
 
-
 ctx.beginPath();
 ctx.moveTo(100, 265);
 ctx.lineTo(100, 430);
 ctx.stroke();
 
 // Horizontal lines
+
 ctx.beginPath();
 ctx.moveTo(100, 430);
 ctx.lineTo(700, 430);
@@ -89,21 +98,42 @@ ctx.moveTo(100, 62);
 ctx.lineTo(150, 62);
 ctx.stroke();
 
+ctx.strokeStyle = '#4efd54';
 ctx.beginPath();
 ctx.moveTo(299, 62);
-ctx.lineTo(400, 62);
+ctx.lineTo(395, 62);
 ctx.stroke();
 
+// Draw the arrow slightly backward
+ctx.beginPath();
+ctx.moveTo(382, 62); 
+ctx.lineTo(377, 57);
+ctx.lineTo(377, 67); 
+ctx.lineTo(382, 62); 
+ctx.stroke();
+
+ctx.strokeStyle = 'black';
 ctx.beginPath();
 ctx.moveTo(220, 62);
-ctx.lineTo(300, 62);
+ctx.lineTo(309, 62);
 ctx.stroke();
 
+ctx.strokeStyle = 'red';
 ctx.beginPath();
-ctx.moveTo(400, 62);
+ctx.moveTo(405, 62);
 ctx.lineTo(530, 62);
 ctx.stroke();
 
+
+ // Draw the  arrow
+ctx.beginPath();
+ctx.moveTo(515, 62); 
+ctx.lineTo(510, 58); 
+ctx.lineTo(510, 66); 
+ctx.lineTo(515, 62); 
+ctx.stroke();
+
+ctx.strokeStyle = "black";
 ctx.beginPath();
 ctx.moveTo(570, 62);
 ctx.lineTo(701, 62);
