@@ -372,3 +372,7 @@ td{
 .column-font{
   display: none;
 }
+
+#calculation-display-div, #result-display-div{
+  display: none;
+}
