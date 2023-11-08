@@ -513,6 +513,9 @@ function varinit() {
   $("#add-to-table-btn").prop("disabled", true);
   $("#add-I1I2-btn").prop("disabled", true);
   $("#result-btn").prop("disabled", true);
+
+  document.getElementById('result-display-div').style.visibility='hidden'
+  document.getElementById('calculation-display-div').style.visibility='hidden'
 }
 
 function varchange() {
@@ -680,11 +683,8 @@ function startSimulation(){
 };
 
 function addtable(){
-  rowCount +=1
-  if (rowCount >=5) {
-    alert("maximum table observation taken down")
-    $("#add-to-table-btn").prop("disabled", true);
-  }
+  rowCount +=1;
+
   var table=document.getElementById("mytable");
   var row=table.insertRow(-1);
   var cell1=row.insertCell(0);
@@ -702,6 +702,12 @@ function addtable(){
   cell5.classList.add("column-font");
   // cell5.innerHTML="cell5";
   // cell6.innerHTML="cell6";
+
+  if (rowCount >=5) {
+    alert("maximum table observation taken down")
+    $("#add-to-table-btn").prop("disabled", true);
+  }
+  
 }
 
 //show hidden values
@@ -712,5 +718,16 @@ function showvalue(){
     cell.style.display = 'table-cell';
   });
 }
+
+function showResult() {
+  document.getElementById('result-display-div').style.visibility='visible'  
+  document.getElementById('calculation-display-div').style.visibility='visible'  
+  document.getElementById('i1').innerHTML = 0;
+  document.getElementById('i2').innerHTML = 0;
+  document.getElementById('i3').innerHTML = 0;
+
+  
+}
+
 
 window.addEventListener("load", varinit);

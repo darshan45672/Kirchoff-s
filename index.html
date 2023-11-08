@@ -124,7 +124,7 @@
                   <button id="simulate-btn" class="button" style="cursor: pointer;" onclick="startSimulation();">Start Simulation</button> 
                   <button id="add-to-table-btn" class="button" style="cursor: pointer;" onclick="addtable();">Add to Table</button>
                   <button id="add-I1I2-btn" class="button" style="cursor: pointer;" onclick="showvalue()">Add I2+I3</button>
-                  <button id="result-btn" class="button" style="cursor: pointer;" onclick="">Result</button>
+                  <button id="result-btn" class="button" style="cursor: pointer;" onclick="showResult()">Result</button>
                   <p id="message" style="text-align: center; margin-top: 20px;"></p>
                 </div>
               </div>
@@ -151,15 +151,13 @@
                 </div>
               </div>
           </div>
-          <div id="" class="main__task-div">
+          <div id="calculation-display-div" class="main__task-div">
             <h3 class="task-title">Calcualtions</h3>
               <div class="settings-sections">
                 <div class="control-sections">
-                  <!-- <p id="p1">Resistance (R) = <span id="resistance"></span> Ω</p>
-                  <p id="p2">Voltage (V<sub>s</sub>) = <span id="voltage"></span> V</p>
-                  <p id="p2">Threshold Current (I<sub>th</sub>) = <span id="threshold"></span> mA</p>
-                  <p id="p2">Current (I<sub>a</sub>) = <span id="current"></span> mA</p>
-                  <p id="p3"><sapn id="resultMessage"></span></p> -->
+                  <p id="p1">I1 = <span id="i1"></span> mA</p>
+                  <p id="p2">I2 = <span id="i2"></span> mA</p>
+                  <p id="p2">I3  = <span id="i3"></span> mA</p>
                     <!-- <table id="mytable">
                       <tr>
                         <th>DC Voltage</th>
@@ -171,15 +169,15 @@
                 </div>
               </div>
           </div>
-          <div id="" class="main__task-div">
+          <div id="result-display-div" class="main__task-div">
             <h3 class="task-title">Result</h3>
               <div class="settings-sections">
                 <div class="control-sections">
                   <!-- <p id="p1">Resistance (R) = <span id="resistance"></span> Ω</p>
                   <p id="p2">Voltage (V<sub>s</sub>) = <span id="voltage"></span> V</p>
                   <p id="p2">Threshold Current (I<sub>th</sub>) = <span id="threshold"></span> mA</p>
-                  <p id="p2">Current (I<sub>a</sub>) = <span id="current"></span> mA</p>
-                  <p id="p3"><sapn id="resultMessage"></span></p> -->
+                  <p id="p2">Current (I<sub>a</sub>) = <span id="current"></span> mA</p> -->
+                  <p id="p3"><sapn id="resultMessage"></span></p>
                     <!-- <table id="mytable">
                       <tr>
                         <th>DC Voltage</th>
