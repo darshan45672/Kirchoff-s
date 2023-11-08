@@ -731,10 +731,10 @@ function addtable(){
   // cell5.innerHTML="cell5";
   // cell6.innerHTML="cell6";
 
-  if (rowCount >=5) {
-    alert("maximum table observation taken down")
-    $("#add-to-table-btn").prop("disabled", true);
-  }
+  // if (rowCount >=5) {
+  //   alert("maximum table observation taken down")
+  //   $("#add-to-table-btn").prop("disabled", true);
+  // }
   
 }
 
