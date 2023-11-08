@@ -336,6 +336,15 @@
   row-gap: 1rem;
 }
 
+
+.control-sections  #mytable{
+  /* padding: 50px 1rem 50px 1rem; */
+  /* border: 1px solid var(--clr-title-background);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; */
+  padding-left: none;
+}
+
 .var-div {
   display: grid;
   grid-template-columns: 80fr 20fr;
@@ -351,4 +360,15 @@
 
 .control-sections {
   height: 100%;
+}
+
+tr, th,td, table{
+  border:2px solid black;
+  border-collapse: collapse;
+}
+td{
+  text-align: center;
+}
+.column-font{
+  display: none;
 }

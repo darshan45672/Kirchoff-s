@@ -1,3 +1,7 @@
+var voltage = i1 = i2 = i3 = 0;
+
+var rowCount = 0;
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -27,6 +31,11 @@ ctx.fillText("GND", 410, 415)
 // gnd terminal
 ctx.fillStyle = "black";
 roundRect(395, 425, 10, 10, 6);
+ctx.fill();
+
+// gnd terminal
+ctx.fillStyle = "black";
+roundRect(395, 58, 10, 10, 6);
 ctx.fill();
 
 ctx.strokeStyle = "black";
@@ -77,7 +86,7 @@ ctx.stroke();
 
 ctx.beginPath();
 ctx.moveTo(100, 62);
-ctx.lineTo(160, 62);
+ctx.lineTo(150, 62);
 ctx.stroke();
 
 ctx.beginPath();
@@ -86,8 +95,8 @@ ctx.lineTo(400, 62);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(200, 62);
-ctx.lineTo(230, 62);
+ctx.moveTo(220, 62);
+ctx.lineTo(300, 62);
 ctx.stroke();
 
 ctx.beginPath();
@@ -130,6 +139,12 @@ ctx.fillText("+ve", 55, 210)
 ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("-ve", 60, 290)
+
+// battery naming
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("Battery", 140, 250)
+
 // ctx.beginPath();
 // ctx.moveTo(690, 340);
 // ctx.lineTo(700, 346);
@@ -168,38 +183,38 @@ ctx.fillText("-ve", 60, 290)
 // resistor 1
 
 ctx.beginPath();
-ctx.moveTo(230, 62);
-ctx.lineTo(240,48);
+ctx.moveTo(150, 62);
+ctx.lineTo(160,48);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(240, 48);
-ctx.lineTo(250,72);
+ctx.moveTo(160, 48);
+ctx.lineTo(170,72);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(250, 72);
-ctx.lineTo(260,48);
+ctx.moveTo(170, 72);
+ctx.lineTo(180,48);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(260, 48);
-ctx.lineTo(270,72);
+ctx.moveTo(180, 48);
+ctx.lineTo(190,72);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(270, 72);
-ctx.lineTo(280,48);
+ctx.moveTo(190, 72);
+ctx.lineTo(200,48);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(280, 48);
-ctx.lineTo(290,72);
+ctx.moveTo(200, 48);
+ctx.lineTo(210,72);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(290, 72);
-ctx.lineTo(300,61);
+ctx.moveTo(210, 72);
+ctx.lineTo(220,61);
 ctx.stroke();
 
 // resistor 1 end
@@ -283,7 +298,7 @@ ctx.stroke();
 // resister 1 ammeter
 ctx.fillStyle = "white";
 ctx.beginPath();
-ctx.arc(180, 63, 20, 0, 2 * Math.PI);
+ctx.arc(330, 63, 20, 0, 2 * Math.PI);
 ctx.fill();
 ctx.stroke();
 
@@ -291,7 +306,7 @@ ctx.stroke();
 ctx.fillStyle = "black"
 ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
-ctx.fillText("A1", 167, 63)
+ctx.fillText("A1", 317, 63)
 
 // resister 2 ammeter
 ctx.fillStyle = "white";
@@ -320,33 +335,117 @@ ctx.textBaseline = "middle";
 ctx.fillText("A3", 387, 186)
 
 // resistor 1 naming
-ctx.font = "bold small-caps 15px Arial";
+ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
-ctx.fillText("R1", 235, 30)
+ctx.fillText("R1", 175, 30)
 
+ctx.fillStyle = "red"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("x", 392, 48)
+ctx.fillStyle = "black"
 
 
 // resistor 2 naming
-ctx.font = "bold small-caps 15px Arial";
+ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("R2", 730, 280)
 
+function resistance2Display(res){
+  let text = `${res} Ω`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(715,300,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "small-caps 20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 730, 310)
+  ctx.fillStyle = "black";
+}
+
+function resistance1Display(res){
+  let text = `${res} Ω`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(155,90,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "small-caps 20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 158, 100)
+  ctx.fillStyle = "black";
+}
+
+function resistance3Display(res){
+  let text = `${res} Ω`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(415,300,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "small-caps 20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 418, 310);
+  ctx.fillStyle = "black";
+}
+
+function ammeter3display(cur) {
+  let text = `${cur} mA`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(425,200,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 430, 210);
+  ctx.fillStyle = "black";
+}
+
+function ammeter2display(cur){
+  let text = `${cur} mA`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(510,90,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 515, 105);
+  ctx.fillStyle = "black";
+}
+
+function ammeter1display(cur) {
+  let text = `${cur} mA`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(280,115,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 285, 128);
+  ctx.fillStyle = "black";
+}
+
+function batteryDisplay(volt){
+  let text = `${volt} V`;
+  ctx.fillStyle = "white";
+  ctx.fillRect(150,270,100,25);
+  ctx.fillStyle = "black";
+  ctx.font = "small-caps 20px Arial";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, 153, 280)
+  ctx.fillStyle = "black";
+}
+
+ctx.fillStyle = "black";
+
 // resistor 3 naming
-ctx.font = "bold small-caps 15px Arial";
+ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("R3", 425, 280)
 
 //ammeter naming
 
-ctx.font = "bold small-caps 15px Arial";
+ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
-ctx.fillText("ammeter 1", 130, 30)
+ctx.fillText("ammeter 1", 280, 100)
 
-ctx.font = "bold small-caps 15px Arial";
+ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("ammeter 2", 500, 30)
 
-ctx.font = "bold small-caps 15px Arial";
+ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("ammeter 3", 425, 180)
 
@@ -405,6 +504,15 @@ function varinit() {
   $("#resistor3Spinner").spinner("value", 0.01);
   // $("#CsArea").spinner("value", 0.01);
   // $("#Ivalue").spinner("value", 0.01);
+
+  $('#voltageSlider').slider("disable"); 
+  $('#resistor1Slider').slider("disable"); 
+  $('#resistor2Slider').slider("disable"); 
+  $('#resistor3Slider').slider("disable"); 
+
+  $("#add-to-table-btn").prop("disabled", true);
+  $("#add-I1I2-btn").prop("disabled", true);
+  $("#result-btn").prop("disabled", true);
 }
 
 function varchange() {
@@ -498,8 +606,111 @@ function varupdate() {
   $("#resistor2Spinner").spinner("value", $("#resistor2Slider").slider("value"));
   $("#resistor3Spinner").spinner("value", $("#resistor3Slider").slider("value"));
   volt = $("#voltageSpinner").spinner("value"); //Updating variables
-  res1 = $("#resistorSpinner").spinner("value");
-  resistanceDisplay(res1);
- };
+  res1 = $("#resistor1Spinner").spinner("value");
+  res2 = $("#resistor2Spinner").spinner("value");
+  res3 = $("#resistor3Spinner").spinner("value");
+
+  resistance2Display(res2);
+  resistance1Display(res1);
+  resistance3Display(res3);
+  ammeter1display(0.0)
+  ammeter2display(0.0)
+  ammeter3display(0.0)
+  batteryDisplay(volt);
+  voltageassign(volt);
+
+  const numerator = volt * (res3 + res2);
+  const denominator = (res1 * res3) + (res1 * res2) + (res2 * res3);
+
+  const I1 = denominator === 0 ? Infinity : numerator / denominator;
+  const I2 = denominator === 0 ? Infinity : (volt * res3) / denominator;
+  const I3 = denominator === 0 ? Infinity : (volt * res2) / denominator;
+
+
+
+  if (volt === 0 && res1 === 0 && res2 === 0 && res3 === 0) {
+    i1assign(0.0);
+    i2assign(0.0);
+    i3assign(0.0);
+  } else if (isNaN(I1) || !isFinite(I1)) {
+    i1assign(0.0);
+  } else if (isNaN(I2) || !isFinite(I2)) {
+    i2assign(0.0);
+  } else if (isNaN(I3) || !isFinite(I3)) {
+    i3assign(0.0);
+  } else {
+    i1assign(I1);
+    i2assign(I2);
+    i3assign(I3);
+  }
+    // i1assign((volt*(res3+res2))/((res1*res3)+(res1*res2)+(res2*res3)));
+    // i2assign((volt*res3)/((res1*res3)+(res1*res2)+(res2*res3)));
+    // i3assign((volt*res2)/((res1*res2)+(res1*res2)+(res2*res3)));
+
+};
+
+function voltageassign(volt){
+  voltage = volt;
+  batteryDisplay(voltage);
+}
+function i1assign(cur1){
+  i1 = cur1.toFixed(2);
+  ammeter1display(cur1.toFixed(2));
+  console.log("i1 =" + i1);
+}
+function i2assign(cur2){
+  i2 = cur2.toFixed(2);
+  ammeter2display(cur2.toFixed(2));
+  console.log("i2 =" + i2);
+}
+function i3assign(cur3){
+  i3 = cur3.toFixed(2);
+  ammeter3display(cur3.toFixed(2));
+  console.log("i3 =" + i3);
+}
+function startSimulation(){
+  $('#voltageSlider').slider("enable"); 
+  $('#resistor1Slider').slider("enable"); 
+  $('#resistor2Slider').slider("enable"); 
+  $('#resistor3Slider').slider("enable"); 
+  $("#simulate-btn").prop("disabled", true);
+  $("#add-to-table-btn").prop("disabled", false);
+  $("#add-I1I2-btn").prop("disabled", false);
+  $("#result-btn").prop("disabled", false);
+};
+
+function addtable(){
+  rowCount +=1
+  if (rowCount >=5) {
+    alert("maximum table observation taken down")
+    $("#add-to-table-btn").prop("disabled", true);
+  }
+  var table=document.getElementById("mytable");
+  var row=table.insertRow(-1);
+  var cell1=row.insertCell(0);
+  var cell2=row.insertCell(1);
+  var cell3=row.insertCell(2);
+  var cell4=row.insertCell(3);
+  var cell5=row.insertCell(4);
+  // var cell6=row.insertCell(5);
+
+  cell1.innerHTML=voltage;
+  cell2.innerHTML= i1;
+  cell3.innerHTML= i2;
+  cell4.innerHTML= i3;
+  cell5.innerHTML= i1;
+  cell5.classList.add("column-font");
+  // cell5.innerHTML="cell5";
+  // cell6.innerHTML="cell6";
+}
+
+//show hidden values
+
+function showvalue(){
+  var hiddenCells = document.querySelectorAll(".column-font");
+  hiddenCells.forEach(function(cell) {
+    cell.style.display = 'table-cell';
+  });
+}
 
 window.addEventListener("load", varinit);
