@@ -722,6 +722,11 @@ function showvalue(){
 function showResult() {
   document.getElementById('result-display-div').style.visibility='visible'  
   document.getElementById('calculation-display-div').style.visibility='visible'  
+  document.getElementById('i1').innerHTML = 0;
+  document.getElementById('i2').innerHTML = 0;
+  document.getElementById('i3').innerHTML = 0;
+
+  
 }
 
 
