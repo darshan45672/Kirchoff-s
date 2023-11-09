@@ -594,9 +594,7 @@ function varinit() {
   $("#add-to-table-btn").prop("disabled", true);
   $("#add-I1I2-btn").prop("disabled", true);
   $("#result-btn").prop("disabled", true);
-
-  document.getElementById('result-display-div').style.visibility='hidden'
-  document.getElementById('calculation-display-div').style.visibility='hidden'
+  
 }
 
 function varchange() {
@@ -784,10 +782,10 @@ function addtable(){
   // cell5.innerHTML="cell5";
   // cell6.innerHTML="cell6";
 
-  if (rowCount >=5) {
-    alert("maximum table observation taken down")
-    $("#add-to-table-btn").prop("disabled", true);
-  }
+  // if (rowCount >=5) {
+  //   alert("maximum table observation taken down")
+  //   $("#add-to-table-btn").prop("disabled", true);
+  // }
   
 }
 
@@ -801,8 +799,8 @@ function showvalue(){
 }
 
 function showResult() {
-  document.getElementById('result-display-div').style.visibility='visible'  
-  document.getElementById('calculation-display-div').style.visibility='visible'  
+  document.getElementById('result-display-div').style.display = 'block'  
+  document.getElementById('calculation-display-div').style.display = 'block'  
   document.getElementById('i1').innerHTML = 0;
   document.getElementById('i2').innerHTML = 0;
   document.getElementById('i3').innerHTML = 0;
