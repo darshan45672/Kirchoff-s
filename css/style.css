@@ -376,3 +376,11 @@ td{
 #calculation-display-div, #result-display-div{
   display: none;
 }
+
+.settings-sections .control-sections  {
+  display: flex;
+  flex-direction:column;
+  /* border: 0.1rem solid #777; */
+  /* padding: 0 1rem; */
+  /* gap: 1rem; */
+}
