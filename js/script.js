@@ -38,7 +38,7 @@ ctx.fillStyle = "black";
 roundRect(395, 58, 10, 10, 6);
 ctx.fill();
 
-ctx.lineWidth = 2;
+
 
 // Vertical lines
 ctx.strokeStyle = 'yellow';
@@ -47,12 +47,13 @@ ctx.moveTo(400, 68);
 ctx.lineTo(400, 171);
 ctx.stroke();
 
-// ctx.beginPath();
-// ctx.moveTo(400, 68); // Start at the endpoint of the line
-// ctx.lineTo(395, 73); // Arrowhead bottom
-// ctx.lineTo(405, 73); // Arrowhead top
-// ctx.lineTo(400, 68); // Back to the endpoint
-// ctx.stroke();
+// Draw the arrow moving inward
+ctx.beginPath();
+ctx.moveTo(400, 95); 
+ctx.lineTo(395, 90); 
+ctx.lineTo(405, 90); 
+ctx.lineTo(400, 95); 
+ctx.stroke();
 
 
 ctx.strokeStyle = 'black';
@@ -86,8 +87,58 @@ ctx.moveTo(100, 265);
 ctx.lineTo(100, 430);
 ctx.stroke();
 
-// Horizontal lines
 
+
+//lines details
+ctx.strokeStyle = '#4efd54';
+ctx.beginPath();
+ctx.moveTo(739, 402);
+ctx.lineTo(785, 402);
+ctx.stroke();
+
+ctx.strokeStyle = 'red';
+ctx.beginPath();
+ctx.moveTo(739, 432);
+ctx.lineTo(785, 432);
+ctx.stroke();
+
+ctx.strokeStyle = 'yellow';
+ctx.beginPath();
+ctx.moveTo(739, 462);
+ctx.lineTo(785, 462);
+ctx.stroke();
+
+//naming
+
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("I1", 790, 400)
+
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("I2", 790, 430)
+
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("I3", 790, 460)
+
+//border
+ctx.strokeStyle = 'black';
+ctx.lineWidth =1;
+ctx.beginPath();
+ctx.moveTo(725, 372);
+ctx.lineTo(725, 500);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(724, 372);
+ctx.lineTo(850, 372);
+ctx.stroke();
+
+
+// Horizontal lines
+ctx.lineWidth = 2;
+ctx.strokeStyle = 'black';
 ctx.beginPath();
 ctx.moveTo(100, 430);
 ctx.lineTo(700, 430);
