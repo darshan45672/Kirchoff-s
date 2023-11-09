@@ -1,4 +1,4 @@
-.button{
+.button {
   height: 40px;
   width: 300px;
   font-size: 15px;
@@ -318,7 +318,7 @@
 }
 .settings-sections {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   /* border: 0.1rem solid #777; */
   /* padding: 0 1rem; */
   /* gap: 1rem; */
@@ -336,8 +336,7 @@
   row-gap: 1rem;
 }
 
-
-.control-sections  #mytable{
+.control-sections #mytable {
   /* padding: 50px 1rem 50px 1rem; */
   /* border: 1px solid var(--clr-title-background);
   border-bottom-left-radius: 1rem;
@@ -358,28 +357,32 @@
   align-self: stretch;
 }
 
-.control-sections {
+# .control-sections {
   height: 100%;
 }
 
-tr, th,td, table{
-  border:2px solid black;
+tr,
+th,
+td,
+table {
+  border: 2px solid black;
   border-collapse: collapse;
 }
-td{
+td {
   text-align: center;
 }
-.column-font{
+.column-font {
   display: none;
 }
 
-#calculation-display-div, #result-display-div{
+#result-display-div {
   display: none;
+  grid-column: 1/-1;
 }
 
-.settings-sections .control-sections  {
+.settings-sections .control-sections {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   /* border: 0.1rem solid #777; */
   /* padding: 0 1rem; */
   /* gap: 1rem; */
