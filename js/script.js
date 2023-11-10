@@ -590,6 +590,10 @@ function varinit() {
   $('#resistor1Slider').slider("disable"); 
   $('#resistor2Slider').slider("disable"); 
   $('#resistor3Slider').slider("disable"); 
+  $('#voltageSpinner').spinner("disable"); 
+  $('#resistor1Spinner').spinner("disable"); 
+  $('#resistor2Spinner').spinner("disable"); 
+  $('#resistor3Spinner').spinner("disable"); 
 
   $("#add-to-table-btn").prop("disabled", true);
   $("#add-I1I2-btn").prop("disabled", true);
@@ -759,6 +763,18 @@ function startSimulation(){
   $("#add-to-table-btn").prop("disabled", false);
   $("#add-I1I2-btn").prop("disabled", false);
   $("#result-btn").prop("disabled", false);
+  $('#voltageSpinner').spinner("enable"); 
+  $('#resistor1Spinner').spinner("enable"); 
+  $('#resistor2Spinner').spinner("enable"); 
+  $('#resistor3Spinner').spinner("enable"); 
+  resistance2Display(0);
+  resistance1Display(0);
+  resistance3Display(0);
+  ammeter1display(0.0)
+  ammeter2display(0.0)
+  ammeter3display(0.0)
+  batteryDisplay(0);
+  voltageassign(0);
 };
 
 function addtable(){
