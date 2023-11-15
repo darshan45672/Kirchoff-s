@@ -815,7 +815,7 @@ function showvalue(){
 }
 
 function showResult() {
-  document.getElementById('result-display-div').style.display = 'block'  
+  document.getElementById('p3').style.display = 'block'  
   document.getElementById('calculation-display-div').style.display = 'block'  
   document.getElementById('i1').innerHTML = 0;
   document.getElementById('i2').innerHTML = 0;

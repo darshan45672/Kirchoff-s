@@ -379,6 +379,9 @@ td {
   display: none;
   grid-column: 1/-1;
 }
+#p3{
+  display: none;
+}
 
 .settings-sections .control-sections {
   display: flex;
