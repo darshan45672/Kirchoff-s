@@ -226,41 +226,6 @@ ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("Battery", 140, 250)
 
-// ctx.beginPath();
-// ctx.moveTo(690, 340);
-// ctx.lineTo(700, 346);
-// ctx.stroke();
-
-// ctx.beginPath();
-// ctx.moveTo(690, 340);
-// ctx.lineTo(710, 328);
-// ctx.stroke();
-      
-// ctx.beginPath();
-// ctx.moveTo(710, 328);
-// ctx.lineTo(690, 316);
-// ctx.stroke();
-
-// ctx.beginPath();
-// ctx.moveTo(690, 316);
-// ctx.lineTo(710, 302);
-// ctx.stroke();
-      
-// ctx.beginPath();
-// ctx.moveTo(710, 302);
-// ctx.lineTo(690, 290);
-// ctx.stroke();
-      
-// ctx.beginPath();
-// ctx.moveTo(690, 290);
-// ctx.lineTo(710, 278);
-// ctx.stroke();
-      
-// ctx.beginPath();
-// ctx.moveTo(710, 278);
-// ctx.lineTo(698, 271);
-// ctx.stroke();
-
 // resistor 1
 
 ctx.beginPath();
@@ -531,22 +496,6 @@ ctx.textBaseline = "middle";
 ctx.fillText("ammeter 3", 425, 180)
 
 
-// ctx.beginPath();io
-// ctx.moveTo(705, 345);
-// ctx.lineTo(630, 345);
-// ctx.stroke();
-      
-// ctx.beginPath();
-// ctx.moveTo(630, 345);
-// ctx.lineTo(630, 215);
-// ctx.stroke();
-
-// ctx.beginPath();
-// ctx.moveTo(700, 215);
-// ctx.lineTo(630, 215);
-// ctx.stroke();
-
-
 //ground
 ctx.beginPath();  
 ctx.moveTo(420, 450);
@@ -583,8 +532,6 @@ function varinit() {
   //resistor 3
   $("#resistor3Slider").slider("value", 0.01);
   $("#resistor3Spinner").spinner("value", 0.01);
-  // $("#CsArea").spinner("value", 0.01);
-  // $("#Ivalue").spinner("value", 0.01);
 
   $('#voltageSlider').slider("disable"); 
   $('#resistor1Slider').slider("disable"); 
@@ -598,7 +545,7 @@ function varinit() {
   $("#add-to-table-btn").prop("disabled", true);
   $("#add-I1I2-btn").prop("disabled", true);
   $("#result-btn").prop("disabled", true);
-  
+  $('#message').text("Click on start simulation")
 }
 
 function varchange() {
@@ -729,9 +676,6 @@ function varupdate() {
     i2assign(I2);
     i3assign(I3);
   }
-    // i1assign((volt*(res3+res2))/((res1*res3)+(res1*res2)+(res2*res3)));
-    // i2assign((volt*res3)/((res1*res3)+(res1*res2)+(res2*res3)));
-    // i3assign((volt*res2)/((res1*res2)+(res1*res2)+(res2*res3)));
 
 };
 
@@ -742,17 +686,14 @@ function voltageassign(volt){
 function i1assign(cur1){
   i1 = cur1.toFixed(2);
   ammeter1display(cur1.toFixed(2));
-  console.log("i1 =" + i1);
 }
 function i2assign(cur2){
   i2 = cur2.toFixed(2);
   ammeter2display(cur2.toFixed(2));
-  console.log("i2 =" + i2);
 }
 function i3assign(cur3){
   i3 = cur3.toFixed(2);
   ammeter3display(cur3.toFixed(2));
-  console.log("i3 =" + i3);
 }
 function startSimulation(){
   $('#voltageSlider').slider("enable"); 
@@ -775,34 +716,26 @@ function startSimulation(){
   ammeter3display(0.0)
   batteryDisplay(0);
   voltageassign(0);
+  $('#message').text("Vary the parameters and click add to table button to take the readings also click on add I2 + I3 to verify KCL")
 };
 
 function addtable(){
-  rowCount +=1;
 
-  var table=document.getElementById("mytable");
-  var row=table.insertRow(-1);
-  var cell1=row.insertCell(0);
-  var cell2=row.insertCell(1);
-  var cell3=row.insertCell(2);
-  var cell4=row.insertCell(3);
-  var cell5=row.insertCell(4);
-  // var cell6=row.insertCell(5);
-
-  cell1.innerHTML=voltage;
-  cell2.innerHTML= i1;
-  cell3.innerHTML= i2;
-  cell4.innerHTML= i3;
-  cell5.innerHTML= i1;
-  cell5.classList.add("column-font");
-  // cell5.innerHTML="cell5";
-  // cell6.innerHTML="cell6";
-
-  // if (rowCount >=5) {
-  //   alert("maximum table observation taken down")
-  //   $("#add-to-table-btn").prop("disabled", true);
-  // }
+  var table = document.getElementById("mytable");
+  var row = table.insertRow(-1);
+  var cell1 =row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
   
+  cell1.innerHTML =voltage;
+  cell2.innerHTML = i1;
+  cell3.innerHTML = i2;
+  cell4.innerHTML = i3;
+  cell5.innerHTML = i1;
+  cell5.classList.add("column-font");
+
 }
 
 //show hidden values
@@ -810,18 +743,12 @@ function addtable(){
 function showvalue(){
   var hiddenCells = document.querySelectorAll(".column-font");
   hiddenCells.forEach(function(cell) {
-    cell.style.display = 'table-cell';
+    $(cell).css('display', 'table-cell');
   });
 }
 
 function showResult() {
-  document.getElementById('p3').style.display = 'block'  
-  document.getElementById('calculation-display-div').style.display = 'block'  
-  document.getElementById('i1').innerHTML = 0;
-  document.getElementById('i2').innerHTML = 0;
-  document.getElementById('i3').innerHTML = 0;
-
-  
+  $('#p3').css('display', 'block');
 }
 
 
